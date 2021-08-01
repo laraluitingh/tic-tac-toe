@@ -1,0 +1,133 @@
+/* myStyle.css */
+
+.grid-container {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-template-rows: 150px 150px 150px;
+  border: black;
+  height:45%;
+  margin:0;
+
+}
+
+.block{
+  height: 95%;
+  margin-top: 2.5%;
+}
+
+.item1{
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  height: 100%;
+}
+
+.item2{
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  height: 100%;
+}
+
+.item3{
+  border-bottom: 3px solid black;
+  height: 100%;
+}
+
+.item4{
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  height: 100%;
+
+}
+
+.item5{
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  height: 100%;
+}
+
+.item6{
+  border-bottom: 3px solid black;
+  height: 100%;
+}
+
+.item7{
+  border-right: 3px solid black;
+  height: 100%;
+}
+
+.item8{
+  border-right: 3px solid black;
+  height: 100%;
+}
+
+.item9{
+  height: 100%;
+}
+
+
+/* main{
+  height:100%;
+  width:100%;
+} */
+
+.center-container{
+height:45%;
+display: flex;
+justify-content: center;
+}
+
+body {
+ height: 100vh;
+}
+
+main{
+  height:100%;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
+}
+
+h1{
+  display: flex;
+  margin:0;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+
+.players{
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  height:auto;
+  margin-bottom: 10%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.turn{
+  border: red 2px solid ;
+}
+
+.players span{
+  padding: 15px;
+}
+
+.oselected{
+  /* background-color: red; */
+  background-image: url("./images/1.png");
+ background-size: contain;
+ 
+
+}
+
+.xselected{
+  background-image: url("./images/Untitled\ design\ \(11\).png") ;
+  background-size: contain;
+  
+}
+
