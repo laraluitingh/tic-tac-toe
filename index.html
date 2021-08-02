@@ -12,8 +12,14 @@
     <main>
       <h1>Tic Tac Toe</h1>
       <div class="players">
-        <span id="player1">Player 1</span>
-        <span id="player2">Player 2</span>
+        <div class="player1-info">
+          <img src="./images/2.png" alt="naughts" class="naughts" />
+          <span id="player1">Player 1</span>
+        </div>
+        <div class="player2-info">
+          <img src="./images/1.png" alt="crosses" class="crosses" />
+          <span id="player2">Player 2</span>
+        </div>
       </div>
 
       <div class="center-container">
@@ -21,7 +27,7 @@
           <div class="item1">
             <div class="block" data-index="0"></div>
           </div>
-          <div class="item2" >
+          <div class="item2">
             <div class="block" data-index="1"></div>
           </div>
 
@@ -48,8 +54,9 @@
           </div>
         </div>
       </div>
-
-      <button id="start-game">Let's play</button>
+      <div class="center-button" id="bottom-container">
+        <button id="start-game" class="start-button">Let's play</button>
+      </div>
     </main>
   </body>
 </html>

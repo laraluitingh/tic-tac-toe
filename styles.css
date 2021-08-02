@@ -17,52 +17,61 @@
 }
 
 .item1{
-  border-right: 3px solid black;
-  border-bottom: 3px solid black;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
   height: 100%;
+  
 }
 
 .item2{
-  border-right: 3px solid black;
-  border-bottom: 3px solid black;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
   height: 100%;
+ 
 }
 
 .item3{
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid white;
   height: 100%;
+ 
 }
 
 .item4{
-  border-right: 3px solid black;
-  border-bottom: 3px solid black;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
   height: 100%;
+ 
 
 }
 
 .item5{
-  border-right: 3px solid black;
-  border-bottom: 3px solid black;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
   height: 100%;
+  
 }
 
 .item6{
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid white;
   height: 100%;
+ 
 }
 
 .item7{
-  border-right: 3px solid black;
+  border-right: 3px solid white;
   height: 100%;
+ 
 }
 
 .item8{
-  border-right: 3px solid black;
+  border-right: 3px solid white;
   height: 100%;
+ 
 }
 
 .item9{
   height: 100%;
+ 
 }
 
 
@@ -77,9 +86,18 @@ display: flex;
 justify-content: center;
 }
 
-body {
- height: 100vh;
+html, body{
+  padding: 0;
+  margin: 0;
 }
+html{
+  height: 100%;
+}
+body{
+  min-height: 100%;
+  background-color: black;
+}
+
 
 main{
   height:100%;
@@ -95,8 +113,9 @@ h1{
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 50px;
+  padding-top: 16px;
+  color: white;
 }
 
 
@@ -105,29 +124,89 @@ h1{
   justify-content: space-around;
   overflow: hidden;
   height:auto;
-  margin-bottom: 10%;
+  margin-bottom: 4%;
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding:20px;
 }
 
 .turn{
-  border: red 2px solid ;
+  border: solid 2px white;
 }
 
 .players span{
   padding: 15px;
 }
 
-.oselected{
-  /* background-color: red; */
-  background-image: url("./images/1.png");
+ .oselected{
+  background-image: url("./images/2.png");
  background-size: contain;
  
 
-}
+} 
+
+/* .oselected{
+   width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events:none;
+    margin:auto;
+    padding:22px;
+    margin-top:24px;
+
+} */
 
 .xselected{
-  background-image: url("./images/Untitled\ design\ \(11\).png") ;
+  background-image: url("./images/1.png") ;
   background-size: contain;
   
 }
+
+.start-button{
+  background-color: black;
+  color: white;
+  border: solid 2px white;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 25px;
+  padding:10px 20px;
+  width:200px;
+  
+}
+
+.center-button{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top:4%;
+}
+
+.naughts{
+  height: 35px;
+}
+
+.crosses{
+  height: 35px;
+}
+
+.player1-info{
+display: inline block;
+}
+
+.player2-info{
+  display: inline block;
+
+}
+
+.winner{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: white;
+}
+
+
 
