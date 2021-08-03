@@ -10,16 +10,6 @@ let players = {
   },
 };
 
-// const winningconditons=[
-//  [0,1,2],
-//  [3,4,5],
-//  [6,7,8],
-//  [0,3,6],
-//  [1,4,7],
-//  [2,5,8],
-//  [0,4,8],
-//  [2,4,6]
-// ]
 
 let startButton = document.getElementById("start-game");
 let player1Name = document.getElementById("player1");
@@ -27,6 +17,10 @@ let player2Name = document.getElementById("player2");
 let player1Info = document.getElementById("player1-info");
 let player2Info = document.getElementById("player2-info");
 const winningDiv = document.getElementById("bottom-container");
+let player1Score=0;
+let Player2Score=0;
+let player1ScorePage=document.getElementById("player-1-score");
+let player2ScorePage=document.getElementById("player-2-score");
 
 let player1Plays = [];
 let player2Plays = [];
@@ -120,6 +114,8 @@ function winning() {
       playAgainButton.classList.add("play-again");
       winningDiv.append(playAgainButton);
       //playAgainButton.setAttribute("id", "playAgain");
+      player1Score++
+      player1ScorePage.innerText= player1Score;
       playAgainButton.addEventListener("click",playAgain);
       const blocks = document.getElementsByClassName("block");
       for (let block of blocks) {
@@ -145,6 +141,8 @@ function winning() {
       winningDiv.append(playAgainButton2);
       playAgainButton2.addEventListener("click",playAgain);
       //playAgainButton2.setAttribute("id", "playAgain");
+      player2Score++
+      player2ScorePage.innerText=player2Score;
       const blocks = document.getElementsByClassName("block");
       for (let block of blocks) {
         block.removeEventListener("click", blockSelected);
@@ -152,8 +150,6 @@ function winning() {
       break;
     }else if( player1Plays.length + player2Plays.length===9){
       console.log("draw");
-      console.log("player 1: " +player1Plays.length); 
-      console.log("player 2: " +player2Plays.length);
       let draw = document.createElement("p");
       console.log(winningDiv);
       draw.innerText = "draw";

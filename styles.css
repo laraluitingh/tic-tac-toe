@@ -128,14 +128,17 @@ h1{
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   padding:20px;
+  position: relative;
 }
 
 .turn{
   border: solid 2px white;
 }
 
-.players span{
+.players1and2{
   padding: 15px;
+  position: absolute;
+  top:15px;
 }
 
  .oselected{
@@ -218,6 +221,16 @@ display: inline block;
   font-size: 20px;
   padding: 5px 10px;
   margin-top: 25px;
+}
+
+.play1Score{
+ color: white;
+ position: static;
+}
+
+.playe2Score{
+  color: white;
+  position:static;
 }
 
 
