@@ -26,7 +26,7 @@ let player1Name = document.getElementById("player1");
 let player2Name = document.getElementById("player2");
 let player1Info = document.getElementById("player1-info");
 let player2Info = document.getElementById("player2-info");
-const winningDiv=document.getElementById("bottom-container");
+const winningDiv = document.getElementById("bottom-container");
 
 let player1Plays = [];
 let player2Plays = [];
@@ -104,25 +104,71 @@ function winning() {
       player1Plays.includes(winningconditons[i][2])
     ) {
       console.log("player 1 wins");
-      let winner=document.createElement("p");
-      console.log(winningDiv)
-      winner.innerText="Player 1 wins"
+      let winner = document.createElement("p");
+      console.log(winningDiv);
+      winner.innerText = "Player 1 wins";
       winner.classList.add("winner");
       console.log(winner);
       winningDiv.append(winner);
+      let playAgainButton = document.createElement("button");
+      playAgainButton.innerText = "Play again";
+      playAgainButton.classList.add("play-again");
+      winningDiv.append(playAgainButton);
+      //playAgainButton.setAttribute("id", "playAgain");
+      playAgainButton.addEventListener("click",playAgain);
+      const blocks = document.getElementsByClassName("block");
+      for (let block of blocks) {
+        block.removeEventListener("click", blockSelected);
+      }
     } else if (
       player2Plays.includes(winningconditons[i][0]) &&
       player2Plays.includes(winningconditons[i][1]) &&
       player2Plays.includes(winningconditons[i][2])
     ) {
       console.log("player 2 wins");
-      let winner2=document.createElement("p");
-      let div=document.getElementById("center-button");
-      console.log(winningDiv)
-      winner2.innerText="Player 2 wins";
+      let winner2 = document.createElement("p");
+      let div = document.getElementById("center-button");
+      console.log(winningDiv);
+      winner2.innerText = "Player 2 wins";
       winner2.classList.add("winner");
       console.log(winner2);
       winningDiv.append(winner2);
-
+      playAgainButton2 = document.createElement("button");
+      playAgainButton2.innerText = "Play again";
+      playAgainButton2.classList.add("play-again");
+      winningDiv.appendChild(playAgainButton2);
+      playAgainButton2.addEventListener("click",playAgain);
+      //playAgainButton2.setAttribute("id", "playAgain");
+      const blocks = document.getElementsByClassName("block");
+      for (let block of blocks) {
+        block.removeEventListener("click", blockSelected);
+      }
     }
 }
+
+
+function playAgain(){
+  // console.log(event.target)
+  // let buttonPlay=event.target
+  // buttonPlay.remove();
+  // let winningPlayer=buttonPlay.sib
+  // console.log(winningPlayer);
+ document.getElementsByClassName("winner")[0].remove();
+ document.getElementsByClassName("play-again")[0].remove();
+
+  const blocks = document.getElementsByClassName("block");
+for (let block of blocks) {
+  block.addEventListener("click", blockSelected);
+  player1Plays = [];
+  player2Plays = [];
+  players.player1.turn=false;
+  players.player2.turn=true;
+  if(block.classList.contains("oselected")){
+    block.classList.remove("oselected")
+  }else if(block.classList.contains("xselected")){
+    block.classList.remove("xselected")
+  }
+}
+
+}
+
