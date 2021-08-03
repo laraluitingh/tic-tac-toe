@@ -47,6 +47,8 @@ for (let block of blocks) {
   block.addEventListener("click", blockSelected);
 }
 
+let counter=0
+
 function blockSelected(event) {
   console.log(event.target);
   const divTarget = event.target;
@@ -65,7 +67,9 @@ function blockSelected(event) {
     console.log(event.target);
     let newNumer = parseInt(divTarget.getAttribute("data-index"));
     player1Plays.push(newNumer);
+    console.log(player1Plays.length)
     console.log(player1Plays);
+    counter++
     winning();
   } else if (
     players.player2.turn &&
@@ -81,6 +85,7 @@ function blockSelected(event) {
     console.log(event.target);
     let newNumber2 = parseInt(divTarget.getAttribute("data-index"));
     player2Plays.push(newNumber2);
+    console.log(player2Plays.length)
     console.log(player2Plays);
     winning();
   }
@@ -97,7 +102,7 @@ function winning() {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  for (let i = 0; i < winningconditons.length; i++)
+  for (let i = 0; i < winningconditons.length; i++){
     if (
       player1Plays.includes(winningconditons[i][0]) &&
       player1Plays.includes(winningconditons[i][1]) &&
@@ -120,6 +125,8 @@ function winning() {
       for (let block of blocks) {
         block.removeEventListener("click", blockSelected);
       }
+
+      break;
     } else if (
       player2Plays.includes(winningconditons[i][0]) &&
       player2Plays.includes(winningconditons[i][1]) &&
@@ -127,7 +134,6 @@ function winning() {
     ) {
       console.log("player 2 wins");
       let winner2 = document.createElement("p");
-      let div = document.getElementById("center-button");
       console.log(winningDiv);
       winner2.innerText = "Player 2 wins";
       winner2.classList.add("winner");
@@ -136,14 +142,35 @@ function winning() {
       playAgainButton2 = document.createElement("button");
       playAgainButton2.innerText = "Play again";
       playAgainButton2.classList.add("play-again");
-      winningDiv.appendChild(playAgainButton2);
+      winningDiv.append(playAgainButton2);
       playAgainButton2.addEventListener("click",playAgain);
       //playAgainButton2.setAttribute("id", "playAgain");
       const blocks = document.getElementsByClassName("block");
       for (let block of blocks) {
         block.removeEventListener("click", blockSelected);
       }
+      break;
+    }else if( player1Plays.length + player2Plays.length===9){
+      console.log("draw");
+      console.log("player 1: " +player1Plays.length); 
+      console.log("player 2: " +player2Plays.length);
+      let draw = document.createElement("p");
+      console.log(winningDiv);
+      draw.innerText = "draw";
+      draw.classList.add("winner");
+      winningDiv.append(draw);
+      playAgainButton2 = document.createElement("button");
+      playAgainButton2.innerText = "Play again";
+      playAgainButton2.classList.add("play-again");
+      winningDiv.append(playAgainButton2);
+      playAgainButton2.addEventListener("click",playAgain);
+      //playAgainButton2.setAttribute("id", "playAgain");
+      const blocks = document.getElementsByClassName("block");
+      break;
+
+
     }
+  }
 }
 
 
