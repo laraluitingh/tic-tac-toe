@@ -81,9 +81,9 @@
 } */
 
 .center-container{
-height:45%;
-display: flex;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 html, body{
@@ -100,23 +100,44 @@ body{
 
 
 main{
-  height:100%;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  display: grid;
+  grid-template-areas: 
+  "whitespace header space1" 
+  "sidebar content space2";
+
+  grid-template-columns: 2fr 4fr 2fr ;
+  grid-template-rows: auto auto auto;
+  column-gap: 30px;
+  row-gap: 30px;
+  margin:0 auto;
+  max-width: 70%;
 
 }
 
-h1{
+header{
+  grid-area: header;
+}
+
+aside{
+  grid-area: sidebar;
+}
+
+section{
+  grid-area:content;
+}
+
+/* h1{
   display: flex;
   margin:0;
   align-items: center;
-  justify-content: center;
+justify-content: center;
+  
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 50px;
   padding-top: 16px;
-  color: white;
-}
+  color: white; 
+  background-image: url("./images/Copy\ of\ Copy\ of\ THe\ Tic\ Tac\ Toe\ Game-2.png");
+} */
 
 
 .players{
@@ -124,11 +145,12 @@ h1{
   justify-content: space-around;
   overflow: hidden;
   height:auto;
+  flex-direction: column;
   margin-bottom: 4%;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   padding:20px;
-  position: relative;
+ 
 }
 
 .turn{
@@ -136,9 +158,9 @@ h1{
 }
 
 .players1and2{
-  padding: 15px;
+  padding: 10px;
   position: absolute;
-  top:15px;
+  top: -5px;
 }
 
  .oselected{
@@ -182,11 +204,11 @@ h1{
 }
 
 .center-button{
-  width: 100vw;
-  display: flex;
-  padding-top: 25px;
+  padding-top: 45px;
   flex-direction: column;
   align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .naughts{
@@ -198,11 +220,14 @@ h1{
 }
 
 .player1-info{
-display: inline block;
+/* display: inline block; */
+position: relative;
 }
 
 .player2-info{
-  display: inline block;
+  /* display: inline block; */
+  position:relative;
+  margin-top:50px;
 
 }
 
@@ -231,6 +256,43 @@ display: inline block;
 .playe2Score{
   color: white;
   position:static;
+}
+
+.pageTitle{
+  width:550px;
+}
+
+header{
+  display: flex;
+  width:100%;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1035px) {
+  main {
+    display: grid;
+    grid-template-areas:
+        "whitespace header"
+        "sidebar content ";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 0px;
+    row-gap: 30px;
+    margin: 0 auto;
+    max-width: 100%;
+
+  }
+}
+
+@media screen and (max-width: 746px) {
+  .players1and2 {
+    padding: 10px;
+   position: static;
+    top: -5px; 
+    display: block;
+}
+
+
 }
 
 

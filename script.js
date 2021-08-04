@@ -18,9 +18,10 @@ let player1Info = document.getElementById("player1-info");
 let player2Info = document.getElementById("player2-info");
 const winningDiv = document.getElementById("bottom-container");
 let player1Score=0;
-let Player2Score=0;
+let player2Score=0;
 let player1ScorePage=document.getElementById("player-1-score");
 let player2ScorePage=document.getElementById("player-2-score");
+let plays=[];
 
 let player1Plays = [];
 let player2Plays = [];
@@ -64,6 +65,7 @@ function blockSelected(event) {
     console.log(player1Plays.length)
     console.log(player1Plays);
     counter++
+    plays.push("player1");
     winning();
   } else if (
     players.player2.turn &&
@@ -81,6 +83,7 @@ function blockSelected(event) {
     player2Plays.push(newNumber2);
     console.log(player2Plays.length)
     console.log(player2Plays);
+    plays.push("player2")
     winning();
   }
 }
@@ -122,7 +125,17 @@ function winning() {
         block.removeEventListener("click", blockSelected);
       }
 
+      if(player1Name.classList.contains("turn")){
+        player1Name.classList.remove("turn")
+       }else if(player2Name.classList.contains("turn")){
+        player2Name.classList.remove("turn")
+       }
+
+      players.player1.turn=true;
+      players.player2.turn=false
+
       break;
+    
     } else if (
       player2Plays.includes(winningconditons[i][0]) &&
       player2Plays.includes(winningconditons[i][1]) &&
@@ -141,12 +154,23 @@ function winning() {
       winningDiv.append(playAgainButton2);
       playAgainButton2.addEventListener("click",playAgain);
       //playAgainButton2.setAttribute("id", "playAgain");
+
       player2Score++
+      console.log(player2Score)
       player2ScorePage.innerText=player2Score;
       const blocks = document.getElementsByClassName("block");
       for (let block of blocks) {
         block.removeEventListener("click", blockSelected);
       }
+
+      if(player1Name.classList.contains("turn")){
+        player1Name.classList.remove("turn")
+       }else if(player2Name.classList.contains("turn")){
+        player2Name.classList.remove("turn")
+       }
+
+      players.player1.turn=false;
+      players.player2.turn=true;
       break;
     }else if( player1Plays.length + player2Plays.length===9){
       console.log("draw");
@@ -162,6 +186,22 @@ function winning() {
       playAgainButton2.addEventListener("click",playAgain);
       //playAgainButton2.setAttribute("id", "playAgain");
       const blocks = document.getElementsByClassName("block");
+      if(player1Name.classList.contains("turn")){
+        player1Name.classList.remove("turn")
+       }else if(player2Name.classList.contains("turn")){
+        player2Name.classList.remove("turn")
+       }
+
+      if(plays[1]==="player1"){
+      players.player1.turn=false;
+      players.player2.true=true;
+      plays=[]
+      }else{
+        players.player2.turn=false;
+        players.player1.turn=true;
+
+
+      }
       break;
 
 
@@ -179,13 +219,19 @@ function playAgain(){
  document.getElementsByClassName("winner")[0].remove();
  document.getElementsByClassName("play-again")[0].remove();
 
+ if(players.player1.turn){
+  player1Name.classList.add("turn");
+
+ }else if(players.player2.turn){
+  player2Name.classList.add("turn");
+
+ }
+
   const blocks = document.getElementsByClassName("block");
 for (let block of blocks) {
   block.addEventListener("click", blockSelected);
   player1Plays = [];
   player2Plays = [];
-  players.player1.turn=false;
-  players.player2.turn=true;
   if(block.classList.contains("oselected")){
     block.classList.remove("oselected")
   }else if(block.classList.contains("xselected")){
