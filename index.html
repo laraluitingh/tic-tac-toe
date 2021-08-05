@@ -16,15 +16,19 @@
     </header>
     <aside>
       <div class="players">
+
         <div class="player1-info">
-          <img src="./images/2.png" alt="naughts" class="naughts" />
+          <img src="./images/2.png" alt="sign1" class="sign1" id="player1Sign" />
           <span id="player1" class="players1and2">Player 1</span>
           <p>score: <span id="player-1-score" class="play1Score"></span></p>
         </div>
         <div class="player2-info">
-          <img src="./images/1.png" alt="crosses" class="crosses" />
+          <img src="./images/1.png" alt="sign2" class="sign2" id="player2Sign" />
           <span id="player2" class="players1and2">Player 2</span>
           <p>score: <span id="player-2-score" class="play2Score"></span></p>
+        </div>
+        <div>
+          <img src="./images/Untitled design (14).png" alt="edit-button" class="edit" id="edit">
         </div>
       </div>
     </aside>
@@ -67,5 +71,35 @@
       </div>
     </section>
     </main>
+
+    <div class="pop-up">
+       <div class="pop-up-content">
+
+        <div class="close" id="close">+</div>
+
+        <br>
+
+        <form action="">
+          <label for="player1UserName">Player 1</label>
+          <input type="text" id="player1UserName" name="userName-p1" placeholder="Username" required>
+          <!-- <label for="country">Naughts or Crosses</label> -->
+          <select id="player-1-sign" name="p1-sign">
+            <option value="naughts">naughts</option>
+            <option value="crosses">crosses</option>
+            </select>
+
+            <label for="player2UserName">Player 2</label>
+            <input type="text" id="player2UserName" name="userName-p2" placeholder="Username" required>
+            <!-- <label for="country">Naughts or Crosses</label> -->
+            <select id="player-2-sign" name="p2-sign">
+              <option value="naughts">naughts</option>
+              <option value="crosses">crosses</option>
+          </select>
+
+          <input type="submit" value="Submit" id="submit-form">
+        </form>
+         
+       </div>
+    </div>
   </body>
 </html>
