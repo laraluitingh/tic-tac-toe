@@ -23,6 +23,7 @@ let player2Score = 0;
 let player1ScorePage = document.getElementById("player-1-score");
 let player2ScorePage = document.getElementById("player-2-score");
 let plays = [];
+let winnerRound=false;
 
 let player1Plays = [];
 let player2Plays = [];
@@ -33,6 +34,7 @@ startButton.addEventListener("click", (event) => {
     player1Name.classList.add("turn");
     console.log(players);
     startButton.remove();
+    document.getElementById("edit").remove();
   } else {
     alert("a game is already in progress");
   }
@@ -146,6 +148,8 @@ function winning() {
       players.player2.turn = false;
       plays = [];
 
+      winnerRound=true;
+
       break;
     } else if (
       player2Plays.includes(winningconditons[i][0]) &&
@@ -183,8 +187,12 @@ function winning() {
       players.player1.turn = false;
       players.player2.turn = true;
       plays = [];
+      winnerRound=true;
       break;
-    } else if (player1Plays.length + player2Plays.length === 9) {
+    } 
+  }
+    
+    if (player1Plays.length + player2Plays.length === 9 && winnerRound===false) {
       console.log("draw");
       let draw = document.createElement("p");
       console.log(winningDiv);
@@ -216,9 +224,9 @@ function winning() {
         plays = [];
       }
       console.log(plays)
-      break;
+     
     }
-  }
+ 
 }
 
 function playAgain() {
@@ -227,6 +235,7 @@ function playAgain() {
   // buttonPlay.remove();
   // let winningPlayer=buttonPlay.sib
   // console.log(winningPlayer);
+  winnerRound=false;
   document.getElementsByClassName("winner")[0].remove();
   document.getElementsByClassName("play-again")[0].remove();
 
@@ -299,3 +308,9 @@ document.getElementById("submit-form").addEventListener("click", (event) => {
 
 
 });
+
+document.getElementById("restart").addEventListener("click", (event)=>{
+  window.location.reload();
+})
+
+
