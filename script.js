@@ -1,3 +1,4 @@
+//object representing the two players
 let players = {
   player1: {
     userName: "Player 1",
@@ -12,9 +13,15 @@ let players = {
   },
 };
 
+
 let startButton = document.getElementById("start-game");
+
+//username of player1
 let player1Name = document.getElementById("player1");
+//username of player2
 let player2Name = document.getElementById("player2");
+
+//all of player one's info their score, their name, their div
 let player1Info = document.getElementById("player1-info");
 let player2Info = document.getElementById("player2-info");
 const winningDiv = document.getElementById("bottom-container");
@@ -23,7 +30,9 @@ let player2Score = 0;
 let player1ScorePage = document.getElementById("player-1-score");
 let player2ScorePage = document.getElementById("player-2-score");
 let plays = [];
-let winnerRound=false;
+let winnerRound = false;
+
+let audioContext = new AudioContext();
 
 let player1Plays = [];
 let player2Plays = [];
@@ -56,11 +65,10 @@ function blockSelected(event) {
     divTarget.classList.contains("xselected") == false
   ) {
     console.log("succesful");
-    if(players.player1.sign==="naughts"){
-    divTarget.classList.add("oselected");
-    }else{
+    if (players.player1.sign === "naughts") {
+      divTarget.classList.add("oselected");
+    } else {
       divTarget.classList.add("xselected");
-
     }
     players.player1.turn = false;
     players.player2.turn = true;
@@ -80,10 +88,9 @@ function blockSelected(event) {
     divTarget.classList.contains("oselected") == false &&
     divTarget.classList.contains("xselected") == false
   ) {
-
-    if(players.player2.sign==="crosses"){
+    if (players.player2.sign === "crosses") {
       divTarget.classList.add("xselected");
-    }else{
+    } else {
       divTarget.classList.add("oselected");
     }
     players.player2.turn = false;
@@ -148,7 +155,7 @@ function winning() {
       players.player2.turn = false;
       plays = [];
 
-      winnerRound=true;
+      winnerRound = true;
 
       break;
     } else if (
@@ -187,46 +194,47 @@ function winning() {
       players.player1.turn = false;
       players.player2.turn = true;
       plays = [];
-      winnerRound=true;
+      winnerRound = true;
       break;
-    } 
-  }
-    
-    if (player1Plays.length + player2Plays.length === 9 && winnerRound===false) {
-      console.log("draw");
-      let draw = document.createElement("p");
-      console.log(winningDiv);
-      draw.innerText = "draw";
-      draw.classList.add("winner");
-      winningDiv.append(draw);
-      playAgainButton2 = document.createElement("button");
-      playAgainButton2.innerText = "Play again";
-      playAgainButton2.classList.add("play-again");
-      winningDiv.append(playAgainButton2);
-      playAgainButton2.addEventListener("click", playAgain);
-      //playAgainButton2.setAttribute("id", "playAgain");
-      const blocks = document.getElementsByClassName("block");
-      if (player1Name.classList.contains("turn")) {
-        player1Name.classList.remove("turn");
-      } else if (player2Name.classList.contains("turn")) {
-        player2Name.classList.remove("turn");
-      }
-
-      console.log(plays)
-
-      if (plays[0] === "player1") {
-        players.player1.turn = true;
-        players.player2.true = false;
-        plays = [];
-      } else if (plays[0] === "player2"){
-        players.player2.turn = true;
-        players.player1.turn = false;
-        plays = [];
-      }
-      console.log(plays)
-     
     }
- 
+  }
+
+  if (
+    player1Plays.length + player2Plays.length === 9 &&
+    winnerRound === false
+  ) {
+    console.log("draw");
+    let draw = document.createElement("p");
+    console.log(winningDiv);
+    draw.innerText = "draw";
+    draw.classList.add("winner");
+    winningDiv.append(draw);
+    playAgainButton2 = document.createElement("button");
+    playAgainButton2.innerText = "Play again";
+    playAgainButton2.classList.add("play-again");
+    winningDiv.append(playAgainButton2);
+    playAgainButton2.addEventListener("click", playAgain);
+    //playAgainButton2.setAttribute("id", "playAgain");
+    const blocks = document.getElementsByClassName("block");
+    if (player1Name.classList.contains("turn")) {
+      player1Name.classList.remove("turn");
+    } else if (player2Name.classList.contains("turn")) {
+      player2Name.classList.remove("turn");
+    }
+
+    console.log(plays);
+
+    if (plays[0] === "player1") {
+      players.player1.turn = true;
+      players.player2.true = false;
+      plays = [];
+    } else if (plays[0] === "player2") {
+      players.player2.turn = true;
+      players.player1.turn = false;
+      plays = [];
+    }
+    console.log(plays);
+  }
 }
 
 function playAgain() {
@@ -235,7 +243,7 @@ function playAgain() {
   // buttonPlay.remove();
   // let winningPlayer=buttonPlay.sib
   // console.log(winningPlayer);
-  winnerRound=false;
+  winnerRound = false;
   document.getElementsByClassName("winner")[0].remove();
   document.getElementsByClassName("play-again")[0].remove();
 
@@ -269,8 +277,12 @@ document.getElementById("close").addEventListener("click", (event) => {
 document.getElementById("submit-form").addEventListener("click", (event) => {
   event.preventDefault();
 
-  let player1Value = document.getElementById("player1UserName").value.toLowerCase();
-  let player2Value = document.getElementById("player2UserName").value.toLowerCase();
+  let player1Value = document
+    .getElementById("player1UserName")
+    .value.toLowerCase();
+  let player2Value = document
+    .getElementById("player2UserName")
+    .value.toLowerCase();
   let player1Sign = document.getElementById("player-1-sign").value;
   let player2Sign = document.getElementById("player-2-sign").value;
   // players.player1.userName=document.getElementById("player1UserName").value;
@@ -278,39 +290,51 @@ document.getElementById("submit-form").addEventListener("click", (event) => {
   // players.player2.userName=document.getElementById("player2UserName").value;
   // players.player2.sign=document.getElementById("player-2-sign").value;
 
-  if (player1Value === player2Value || player1Sign===player2Sign) {
-    alert("Usernames and signs need to be unique");
-  }else if( player1Value.length === 0 || player2Value.length===0){
-    alert("Usernames are required");
-  }else if (player1Value !== player2Value && player1Sign!==player2Sign) {
+  if (player1Value === player2Value || player1Sign === player2Sign) {
+    document.querySelector(".error-handler").style.display = "flex";
+    document.getElementById("error-message").innerText =
+      "Usernames and signs need to be unique";
+    var strCmd =
+      "document.getElementById('error-handler').style.display = 'none'";
+    var waitseconds = 4;
+
+    // Calculate time out period then execute the command
+    var timeOutPeriod = waitseconds * 1000;
+    setTimeout(strCmd, timeOutPeriod);
+  } else if (player1Value.length === 0 || player2Value.length === 0) {
+    document.querySelector(".error-handler").style.display = "flex";
+    document.getElementById("error-message").innerText =
+      "Usernames are required";
+    var strCmd =
+      "document.getElementById('error-handler').style.display = 'none'";
+    var waitseconds = 4;
+
+    // Calculate time out period then execute the command
+    var timeOutPeriod = waitseconds * 1000;
+    setTimeout(strCmd, timeOutPeriod);
+  } else if (player1Value !== player2Value && player1Sign !== player2Sign) {
     players.player1.userName = document.getElementById("player1UserName").value;
     players.player1.sign = document.getElementById("player-1-sign").value;
-    players.player2.userName=document.getElementById("player2UserName").value;
-    players.player2.sign=document.getElementById("player-2-sign").value;
+    players.player2.userName = document.getElementById("player2UserName").value;
+    players.player2.sign = document.getElementById("player-2-sign").value;
     console.log(players);
     document.querySelector(".pop-up").style.display = "none";
-    document.getElementById("player1").innerText=players.player1.userName;
-    document.getElementById("player2").innerText=players.player2.userName;
-    if(players.player1.sign==="naughts"){
-      let image1=document.getElementById("player1Sign");
-      image1.src="./images/2.png";
-      let image2=document.getElementById("player2Sign");
-      image2.src="./images/1.png";
-
-    }else if(players.player1.sign==="crosses"){
-      let image1=document.getElementById("player1Sign");
-      image1.src="./images/1.png";
-      let image2=document.getElementById("player2Sign");
-      image2.src="./images/2.png";
-
+    document.getElementById("player1").innerText = players.player1.userName;
+    document.getElementById("player2").innerText = players.player2.userName;
+    if (players.player1.sign === "naughts") {
+      let image1 = document.getElementById("player1Sign");
+      image1.src = "./images/2.png";
+      let image2 = document.getElementById("player2Sign");
+      image2.src = "./images/1.png";
+    } else if (players.player1.sign === "crosses") {
+      let image1 = document.getElementById("player1Sign");
+      image1.src = "./images/1.png";
+      let image2 = document.getElementById("player2Sign");
+      image2.src = "./images/2.png";
     }
   }
-
-
 });
 
-document.getElementById("restart").addEventListener("click", (event)=>{
+document.getElementById("restart").addEventListener("click", (event) => {
   window.location.reload();
-})
-
-
+});

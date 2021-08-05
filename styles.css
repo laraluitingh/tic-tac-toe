@@ -100,6 +100,7 @@ main {
   row-gap: 30px;
   margin: 0 auto;
   max-width: 70%;
+  transition: all 0.5s ;
 }
 
 header {
@@ -271,11 +272,11 @@ header {
     row-gap: 30px;
     margin: 0 auto;
     max-width: 100%;
-    transition-delay: 1s;
+    transition-delay: 0.5s;
   }
 }
 
-@media screen and (max-width: 746px) {
+/* @media screen and (max-width: 746px) {
   .players1and2 {
     padding: 10px;
     position: static;
@@ -283,22 +284,22 @@ header {
     display: block;
     transition-delay: 1s;
   }
-}
+} */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 748px) {
   main {
     display: grid;
     grid-template-areas:
-      "whitespace header"
-      "space content "
-      "sidebar sidebar";
-    grid-template-columns: 1fr 2fr;
+      "header"
+      "content "
+      "sidebar";
+    grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     column-gap: 0px;
     row-gap: 30px;
     margin: 0 auto;
     max-width: 95%;
-    transition-delay: 1s;
+    transition-delay: 0.5s;
   }
 
   .players {
@@ -335,17 +336,10 @@ header {
 
   header {
     margin-top: 30px;
-    margin-right: 29px;
-  }
-
-  .center-container {
-    margin-right: 29px;
+   
   }
 
 
-.center-button {
-  margin-right: 29px;
-}
 }
 
 .edit {
@@ -417,4 +411,21 @@ input[type="submit"]:hover {
   top: 10px;
   right: 10px;
   width: 25px;
+}
+
+.error-handler{
+  background-color: rgba(241, 10, 10,1);
+  width: 100%;
+  position: absolute;
+  top:0px;
+  left:0px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display:none;
+}
+
+.error-message{
+ color: white;
 }
