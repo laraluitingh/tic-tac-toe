@@ -1,7 +1,7 @@
 # tic-tac-toe
 
 ## Short description
- 2 player Tic Toe Game with a responsive UI
+ 2 player Tic Toe Game with responsive UI
 
 
 ## How to play
