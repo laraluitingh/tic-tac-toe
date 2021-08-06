@@ -19,6 +19,7 @@
 - Create more readible code
 - Allow player to adjust the size of the board
 - Show users more clearly who has won
+- Create more a interactive and interesting UI
 
 ## Project Status 
 
