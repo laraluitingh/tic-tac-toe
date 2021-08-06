@@ -100,7 +100,7 @@ main {
   row-gap: 30px;
   margin: 0 auto;
   max-width: 70%;
-  transition: all 0.5s ;
+  transition: all 0.5s;
 }
 
 header {
@@ -188,7 +188,7 @@ justify-content: center;
   width: 200px;
 }
 
-.start-button:hover{
+.start-button:hover {
   text-decoration: underline;
 }
 
@@ -236,7 +236,7 @@ justify-content: center;
   margin-top: 25px;
 }
 
-.play-again:hover{
+.play-again:hover {
   text-decoration: underline;
 }
 
@@ -336,10 +336,55 @@ header {
 
   header {
     margin-top: 30px;
-   
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .grid-container {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 90px 90px 90px;
+    grid-template-rows: 90px 90px 90px;
+    border: black;
+    height: 45%;
+    margin: 0;
   }
 
+  .pageTitle {
+    width: 300px;
+  }
 
+  main {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "content "
+      "sidebar";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 0px;
+    row-gap: 30px;
+    /* margin: 0 auto; */
+    /* max-width: 250px; */
+    max-width: 250px;
+    transition-delay: 0.5s;
+  }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 1366px) {
+  main {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "content "
+      "sidebar";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 0px;
+    row-gap: 30px;
+    max-width: 700px;
+    transition-delay: 0.5s;
+  }
 }
 
 .edit {
@@ -413,19 +458,19 @@ input[type="submit"]:hover {
   width: 25px;
 }
 
-.error-handler{
-  background-color: rgba(241, 10, 10,1);
+.error-handler {
+  background-color: rgba(241, 10, 10, 1);
   width: 100%;
   position: absolute;
-  top:0px;
-  left:0px;
+  top: 0px;
+  left: 0px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  display:none;
+  display: none;
 }
 
-.error-message{
- color: white;
+.error-message {
+  color: white;
 }
