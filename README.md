@@ -1,4 +1,4 @@
-# tic-tac-toe
+# Tic-tac-toe Game/ Naughts and crosses
 
 ## Short description
  2 player Tic Toe Game with responsive UI
