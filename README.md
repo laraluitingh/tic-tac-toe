@@ -5,7 +5,7 @@
 
 
 ## How to play
-1. Before you start you can change choose your username and sign 
+1. Before you start you can choose your username and sign 
 2. Player one always goes first
 3. Try and beat your compeitor
 4. Who ever wins will go first in the next round
@@ -18,6 +18,7 @@
 - All0w players to play with the computer
 - Create more readible code
 - Allow player to adjust the size of the board
+- Show users more clearly who has won
 
 ## Project Status 
 
