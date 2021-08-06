@@ -15,7 +15,7 @@
 ## Future steps
 
 - Create a multiplayer game that can be played across two devices 
-- All0w players to play with the computer
+- Allow players to play with the computer
 - Create more readible code
 - Allow player to adjust the size of the board
 - Show users more clearly who has won
