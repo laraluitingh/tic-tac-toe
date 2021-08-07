@@ -61,8 +61,6 @@ for (let block of blocks) {
   block.addEventListener("click", blockSelected);
 }
 
-
-
 //checks which block is selected using html attributes
 function blockSelected(event) {
   console.log(event.target);
@@ -91,7 +89,7 @@ function blockSelected(event) {
     let newNumer = parseInt(divTarget.getAttribute("data-index"));
     //keep track tof th player play by recording blocks index
     player1Plays.push(newNumer);
-  
+
     //keeps track of when the players went will be used to determine a draw
     plays.push("player1");
     //check if the player has won
@@ -141,14 +139,16 @@ function winning() {
       player1Plays.includes(winningconditons[i][1]) &&
       player1Plays.includes(winningconditons[i][2])
     ) {
-
-      let index=winningconditons[i];
+      let index = winningconditons[i];
 
       //changes background-color
 
-      for (i of index){
-        document.querySelectorAll(`[data-index="${i}"]`).item(0).classList.add("winner-color");
-       }
+      for (i of index) {
+        document
+          .querySelectorAll(`[data-index="${i}"]`)
+          .item(0)
+          .classList.add("winner-color");
+      }
 
       debugger;
       console.log("player 1 wins");
@@ -195,15 +195,17 @@ function winning() {
       player2Plays.includes(winningconditons[i][1]) &&
       player2Plays.includes(winningconditons[i][2])
     ) {
-
       //changes background-color
 
-      let index=winningconditons[i];
+      let index = winningconditons[i];
 
-      for (i of index){
-        document.querySelectorAll(`[data-index="${i}"]`).item(0).classList.add("winner-color");
-       }
- 
+      for (i of index) {
+        document
+          .querySelectorAll(`[data-index="${i}"]`)
+          .item(0)
+          .classList.add("winner-color");
+      }
+
       console.log("player 2 wins");
       let winner2 = document.createElement("p");
       console.log(winningDiv);
@@ -282,7 +284,6 @@ function winning() {
 }
 
 function playAgain() {
-
   winnerRound = false;
   //removes play again button and winner text
   document.getElementsByClassName("winner")[0].remove();
@@ -308,10 +309,9 @@ function playAgain() {
     } else if (block.classList.contains("xselected")) {
       block.classList.remove("xselected");
     }
-    
-    if(block.classList.contains("winner-color")){
-      block.classList.remove("winner-color")
 
+    if (block.classList.contains("winner-color")) {
+      block.classList.remove("winner-color");
     }
   }
 }
@@ -355,7 +355,6 @@ document.getElementById("submit-form").addEventListener("click", (event) => {
     // Calculate time out period then execute the command
     var timeOutPeriod = waitseconds * 1000;
 
-  
     setTimeout(strCmd, timeOutPeriod);
 
     //checks wther the userNames have been provided
@@ -393,7 +392,7 @@ document.getElementById("submit-form").addEventListener("click", (event) => {
   }
 });
 
-//sets values to default by reloading the page 
+//sets values to default by reloading the page
 
 document.getElementById("restart").addEventListener("click", (event) => {
   window.location.reload();

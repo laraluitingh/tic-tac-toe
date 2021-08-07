@@ -12,7 +12,6 @@
 
 .block {
   height: 100%;
-
 }
 
 .item1 {
@@ -23,7 +22,7 @@
 
 .item2 {
   border-right: 3px solid white;
- /* border-bottom: 3px solid white; */
+  /* border-bottom: 3px solid white; */
   height: 100%;
 }
 
@@ -162,9 +161,6 @@ justify-content: center;
   background-image: url("./images/2.png");
   background-size: contain;
 }
-
-
-
 
 /* .oselected{
    width: 50px;
@@ -347,14 +343,13 @@ header {
     margin-top: 30px;
   }
 
-  .winner{
+  .winner {
     font-size: 25px;
   }
 
-  .play-again{
+  .play-again {
     font-size: 15px;
   }
-
 }
 
 @media screen and (max-width: 400px) {
@@ -493,6 +488,6 @@ input[type="submit"]:hover {
   color: white;
 }
 
-.winner-color{
-  background-color:grey;
+.winner-color {
+  background-color: grey;
 }

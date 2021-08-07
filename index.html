@@ -9,104 +9,133 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    
     <main>
-    <img src="./images/Untitled design (15).png" alt="restart" class="restart" id="restart">
-    <header>
-      <img src="./images/Copy of Copy of THe Tic Tac Toe Game-2.png" alt="page-title" class="pageTitle">
+      <img
+        src="./images/Untitled design (15).png"
+        alt="restart"
+        class="restart"
+        id="restart"
+      />
+      <header>
+        <img
+          src="./images/Copy of Copy of THe Tic Tac Toe Game-2.png"
+          alt="page-title"
+          class="pageTitle"
+        />
+      </header>
+      <aside>
+        <div class="players">
+          <div class="player1-info">
+            <img
+              src="./images/2.png"
+              alt="sign1"
+              class="sign1"
+              id="player1Sign"
+            />
+            <span id="player1" class="players1and2">Player 1</span>
+            <p>score: <span id="player-1-score" class="play1Score">0</span></p>
+          </div>
+          <div class="player2-info">
+            <img
+              src="./images/1.png"
+              alt="sign2"
+              class="sign2"
+              id="player2Sign"
+            />
+            <span id="player2" class="players1and2">Player 2</span>
+            <p>score: <span id="player-2-score" class="play2Score">0</span></p>
+          </div>
+          <div>
+            <img
+              src="./images/Untitled design (14).png"
+              alt="edit-button"
+              class="edit"
+              id="edit"
+            />
+          </div>
+        </div>
+      </aside>
 
-    </header>
-    <aside>
-      <div class="players">
+      <section>
+        <div class="center-container">
+          <div class="grid-container">
+            <div class="item1">
+              <div class="block" data-index="0"></div>
+            </div>
+            <div class="item2">
+              <div class="block" data-index="1"></div>
+            </div>
 
-        <div class="player1-info">
-          <img src="./images/2.png" alt="sign1" class="sign1" id="player1Sign" />
-          <span id="player1" class="players1and2">Player 1</span>
-          <p>score: <span id="player-1-score" class="play1Score">0</span></p>
-        </div>
-        <div class="player2-info">
-          <img src="./images/1.png" alt="sign2" class="sign2" id="player2Sign" />
-          <span id="player2" class="players1and2">Player 2</span>
-          <p>score: <span id="player-2-score" class="play2Score">0</span></p>
-        </div>
-        <div>
-          <img src="./images/Untitled design (14).png" alt="edit-button" class="edit" id="edit">
-        </div>
-      </div>
-    </aside>
-    
-    <section>
-      <div class="center-container">
-        <div class="grid-container">
-          <div class="item1">
-            <div class="block" data-index="0"></div>
-          </div>
-          <div class="item2">
-            <div class="block" data-index="1"></div>
-          </div>
-
-          <div class="item3">
-            <div class="block" data-index="2"></div>
-          </div>
-          <div class="item4">
-            <div class="block" data-index="3"></div>
-          </div>
-          <div class="item5">
-            <div class="block" data-index="4"></div>
-          </div>
-          <div class="item6">
-            <div class="block" data-index="5"></div>
-          </div>
-          <div class="item7">
-            <div class="block" data-index="6"></div>
-          </div>
-          <div class="item8">
-            <div class="block" data-index="7"></div>
-          </div>
-          <div class="item9">
-            <div class="block" data-index="8"></div>
+            <div class="item3">
+              <div class="block" data-index="2"></div>
+            </div>
+            <div class="item4">
+              <div class="block" data-index="3"></div>
+            </div>
+            <div class="item5">
+              <div class="block" data-index="4"></div>
+            </div>
+            <div class="item6">
+              <div class="block" data-index="5"></div>
+            </div>
+            <div class="item7">
+              <div class="block" data-index="6"></div>
+            </div>
+            <div class="item8">
+              <div class="block" data-index="7"></div>
+            </div>
+            <div class="item9">
+              <div class="block" data-index="8"></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="center-button" id="bottom-container">
-        <button id="start-game" class="start-button">Let's play</button>
-      </div>
-    </section>
+        <div class="center-button" id="bottom-container">
+          <button id="start-game" class="start-button">Let's play</button>
+        </div>
+      </section>
     </main>
-
-   
 
     <div class="pop-up">
       <div class="error-handler" id="error-handler">
         <span id="error-message" class="error-mesage"></span>
       </div>
-       <div class="pop-up-content">
-
+      <div class="pop-up-content">
         <div class="close" id="close">+</div>
 
-        <br>
+        <br />
 
         <form action="">
           <label for="player1UserName">Player 1</label>
-          <input type="text" id="player1UserName" name="userName-p1" placeholder="Username" required>
+          <input
+            type="text"
+            id="player1UserName"
+            name="userName-p1"
+            placeholder="Username"
+            required
+          />
           <!-- <label for="country">Naughts or Crosses</label> -->
           <select id="player-1-sign" name="p1-sign">
             <option value="naughts">naughts</option>
             <option value="crosses">crosses</option>
-            </select>
-
-            <label for="player2UserName">Player 2</label>
-            <input type="text" id="player2UserName" name="userName-p2" placeholder="Username" required>
-            <!-- <label for="country">Naughts or Crosses</label> -->
-            <select id="player-2-sign" name="p2-sign">
-              <option value="naughts">naughts</option>
-              <option value="crosses">crosses</option>
           </select>
 
-          <input type="submit" value="Submit" id="submit-form">
+          <label for="player2UserName">Player 2</label>
+          <input
+            type="text"
+            id="player2UserName"
+            name="userName-p2"
+            placeholder="Username"
+            required
+          />
+          <!-- <label for="country">Naughts or Crosses</label> -->
+          <select id="player-2-sign" name="p2-sign">
+            <option value="naughts">naughts</option>
+            <option value="crosses">crosses</option>
+          </select>
+
+          <input type="submit" value="Submit" id="submit-form" />
         </form>
-         
-       </div>
+      </div>
     </div>
   </body>
 </html>
