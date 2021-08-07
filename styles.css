@@ -11,56 +11,62 @@
 }
 
 .block {
-  height: 95%;
-  margin-top: 2.5%;
+  height: 100%;
+
 }
 
 .item1 {
   border-right: 3px solid white;
-  border-bottom: 3px solid white;
+  /* border-bottom: 3px solid white; */
   height: 100%;
 }
 
 .item2 {
   border-right: 3px solid white;
-  border-bottom: 3px solid white;
+ /* border-bottom: 3px solid white; */
   height: 100%;
 }
 
 .item3 {
-  border-bottom: 3px solid white;
+  /* border-bottom: 3px solid white; */
   height: 100%;
 }
 
 .item4 {
   border-right: 3px solid white;
-  border-bottom: 3px solid white;
+  /* border-bottom: 3px solid white; */
+  border-top: 3px solid white;
   height: 100%;
 }
 
 .item5 {
   border-right: 3px solid white;
-  border-bottom: 3px solid white;
+  /* border-bottom: 3px solid white; */
+  border-top: 3px solid white;
   height: 100%;
 }
 
 .item6 {
-  border-bottom: 3px solid white;
+  /* border-bottom: 3px solid white; */
+  border-top: 3px solid white;
   height: 100%;
 }
 
 .item7 {
   border-right: 3px solid white;
+  border-top: 3px solid white;
   height: 100%;
 }
 
 .item8 {
   border-right: 3px solid white;
+  border-top: 3px solid white;
   height: 100%;
 }
 
 .item9 {
   height: 100%;
+  border-top: 3px solid white;
 }
 
 /* main{
@@ -156,6 +162,9 @@ justify-content: center;
   background-image: url("./images/2.png");
   background-size: contain;
 }
+
+
+
 
 /* .oselected{
    width: 50px;
@@ -337,6 +346,15 @@ header {
   header {
     margin-top: 30px;
   }
+
+  .winner{
+    font-size: 25px;
+  }
+
+  .play-again{
+    font-size: 15px;
+  }
+
 }
 
 @media screen and (max-width: 400px) {
@@ -473,4 +491,8 @@ input[type="submit"]:hover {
 
 .error-message {
   color: white;
+}
+
+.winner-color{
+  background-color:grey;
 }

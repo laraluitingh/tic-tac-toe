@@ -61,7 +61,7 @@ for (let block of blocks) {
   block.addEventListener("click", blockSelected);
 }
 
-//let counter = 0;
+
 
 //checks which block is selected using html attributes
 function blockSelected(event) {
@@ -91,9 +91,7 @@ function blockSelected(event) {
     let newNumer = parseInt(divTarget.getAttribute("data-index"));
     //keep track tof th player play by recording blocks index
     player1Plays.push(newNumer);
-    //console.log(player1Plays.length);
-    //console.log(player1Plays);
-    //counter++;
+  
     //keeps track of when the players went will be used to determine a draw
     plays.push("player1");
     //check if the player has won
@@ -143,6 +141,16 @@ function winning() {
       player1Plays.includes(winningconditons[i][1]) &&
       player1Plays.includes(winningconditons[i][2])
     ) {
+
+      let index=winningconditons[i];
+
+      //changes background-color
+
+      for (i of index){
+        document.querySelectorAll(`[data-index="${i}"]`).item(0).classList.add("winner-color");
+       }
+
+      debugger;
       console.log("player 1 wins");
       let winner = document.createElement("p");
       console.log(winningDiv);
@@ -187,6 +195,15 @@ function winning() {
       player2Plays.includes(winningconditons[i][1]) &&
       player2Plays.includes(winningconditons[i][2])
     ) {
+
+      //changes background-color
+
+      let index=winningconditons[i];
+
+      for (i of index){
+        document.querySelectorAll(`[data-index="${i}"]`).item(0).classList.add("winner-color");
+       }
+ 
       console.log("player 2 wins");
       let winner2 = document.createElement("p");
       console.log(winningDiv);
@@ -265,11 +282,7 @@ function winning() {
 }
 
 function playAgain() {
-  // console.log(event.target)
-  // let buttonPlay=event.target
-  // buttonPlay.remove();
-  // let winningPlayer=buttonPlay.sib
-  // console.log(winningPlayer);
+
   winnerRound = false;
   //removes play again button and winner text
   document.getElementsByClassName("winner")[0].remove();
@@ -294,6 +307,11 @@ function playAgain() {
       block.classList.remove("oselected");
     } else if (block.classList.contains("xselected")) {
       block.classList.remove("xselected");
+    }
+    
+    if(block.classList.contains("winner-color")){
+      block.classList.remove("winner-color")
+
     }
   }
 }
