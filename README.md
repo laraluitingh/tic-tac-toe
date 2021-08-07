@@ -1,11 +1,11 @@
-# tic-tac-toe
+# Tic-tac-toe Game/ Naughts and crosses
 
 ## Short description
- 2 player Tic Toe Game with a responsive UI
+ 2 player Tic Toe Game with responsive UI
 
 
 ## How to play
-1. Before you start you can change choose your username and sign 
+1. Before you start you can choose your username and sign 
 2. Player one always goes first
 3. Try and beat your compeitor
 4. Who ever wins will go first in the next round
@@ -15,9 +15,11 @@
 ## Future steps
 
 - Create a multiplayer game that can be played across two devices 
-- All0w players to play with the computer
+- Allow players to play with the computer
 - Create more readible code
 - Allow player to adjust the size of the board
+- Show users more clearly who has won
+- Create more a interactive and interesting UI
 
 ## Project Status 
 
