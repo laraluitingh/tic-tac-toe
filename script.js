@@ -150,7 +150,6 @@ function winning() {
           .classList.add("winner-color");
       }
 
-      debugger;
       console.log("player 1 wins");
       let winner = document.createElement("p");
       console.log(winningDiv);
@@ -162,7 +161,6 @@ function winning() {
       playAgainButton.innerText = "Play again";
       playAgainButton.classList.add("play-again");
       winningDiv.append(playAgainButton);
-      //playAgainButton.setAttribute("id", "playAgain");
       player1Score++;
       //update the score
       player1ScorePage.innerText = player1Score;
@@ -258,7 +256,6 @@ function winning() {
     playAgainButton2.classList.add("play-again");
     winningDiv.append(playAgainButton2);
     playAgainButton2.addEventListener("click", playAgain);
-    //playAgainButton2.setAttribute("id", "playAgain");
     const blocks = document.getElementsByClassName("block");
     if (player1Name.classList.contains("turn")) {
       player1Name.classList.remove("turn");
@@ -316,6 +313,7 @@ function playAgain() {
   }
 }
 
+//pop-up modules was created using code from RichardCodes https://www.youtube.com/watch?v=gLWIYk0Sd38
 //displays the pop-up
 document.getElementById("edit").addEventListener("click", (event) => {
   document.querySelector(".pop-up").style.display = "flex";
@@ -338,10 +336,6 @@ document.getElementById("submit-form").addEventListener("click", (event) => {
     .value.toLowerCase();
   let player1Sign = document.getElementById("player-1-sign").value;
   let player2Sign = document.getElementById("player-2-sign").value;
-  // players.player1.userName=document.getElementById("player1UserName").value;
-  // players.player1.sign=document.getElementById("player-1-sign").value;
-  // players.player2.userName=document.getElementById("player2UserName").value;
-  // players.player2.sign=document.getElementById("player-2-sign").value;
 
   //Checks if usernames and signs are unique
   if (player1Value === player2Value || player1Sign === player2Sign) {
@@ -355,7 +349,9 @@ document.getElementById("submit-form").addEventListener("click", (event) => {
     // Calculate time out period then execute the command
     var timeOutPeriod = waitseconds * 1000;
 
-    setTimeout(strCmd, timeOutPeriod);
+    setTimeout(function () {
+      document.getElementById("error-handler").style.display = "none";
+    }, timeOutPeriod);
 
     //checks wther the userNames have been provided
   } else if (player1Value.length === 0 || player2Value.length === 0) {
