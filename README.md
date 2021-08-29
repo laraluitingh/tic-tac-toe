@@ -7,10 +7,17 @@
 ## How to play
 1. Before you start you can choose your username and sign 
 2. Player one always goes first
-3. Try and beat your compeitor
+3. Try and beat your competitor
 4. Who ever wins will go first in the next round
 5. You can restart the game by pressing the refersh button
 6. Goodluck
+
+## Features
+- Responsive UI
+- Visually displays the winner of the game
+- Ability to refresh the game
+- Players can change their name and choose their sign
+- Pop modal
 
 ## Future steps
 
