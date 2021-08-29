@@ -27,6 +27,7 @@
 - Allow player to adjust the size of the board
 - Show users more clearly who has won
 - Create more a interactive and interesting UI
+- Adapt the design to Safari 
 
 ## Project Status 
 
